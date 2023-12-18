@@ -102,9 +102,9 @@ class Worker:
 
         # resize img to fit model
         transform = transforms.Compose([
-            transforms.Resize((224, 224)),  # 调整图像大小为模型输入大小
-            transforms.ToTensor(),  # 转换为张量
-            transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])  # 标准化
+            transforms.Resize((224, 224)),
+            transforms.ToTensor(),
+            transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
         ])
 
         channel_down = transform(channel_down).unsqueeze(0)
